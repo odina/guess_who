@@ -18,11 +18,11 @@ module GuessWho
         (possible_firstname.length..str.length).each do |j|
           combination = str.scan(/(?=(#{possible_firstname})([a-zA-Z]{,#{j}})([a-zA-Z]*))/)
           combination = combination.flatten.reject(&:empty?)
-          tokens << combination if combination.any?
+          tokens << combination unless combination.empty?
         end
       end
 
-      tokens.uniq!
+      return tokens.uniq
     end
   end
 end
