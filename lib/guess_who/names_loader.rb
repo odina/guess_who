@@ -13,7 +13,8 @@ module GuessWho
       ]
 
       filenames.each do |filename|
-        f = File.open(filename, "r")
+        path = File.join(File.dirname(__FILE__), '../../', filename)
+        f = File.open(path, "r")
         f.each_line { |l| names << l.split(" ")[0] }
         f.close
       end
