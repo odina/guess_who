@@ -22,7 +22,7 @@ module GuessWho
         end
       end
 
-      tokens
+      tokens.uniq!
     end
   end
 end

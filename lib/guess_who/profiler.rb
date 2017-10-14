@@ -16,25 +16,32 @@ module GuessWho
       full_name_arr = []
       raw_str = email.split("@")[0]
       strings = raw_str.split(/[^a-zA-Z]/)
-      best_result = {
+      best = {
         score: 0,
         parts: [],
         count: 0
       }
 
       strings.each do |str|
-        tokens = Tokenizer.tokenize!(str)
-        tokens.each { |x| puts x.inspect }
+        token_arrays = Tokenizer.tokenize!(str)
 
-        Scorer.score!(tokens) do |score|
-          Comparator.better?(score, best, tokens.count)
-            best = Comparator.better?(score, best, tokens.count)
+        Scorer.score!(token_arrays) do |score, tokens|
+          is_better = Comparator.better?(score,
+                                         best[:score],
+                                         tokens.size,
+                                         best[:count])
+          if is_better
+            best = {
+              score: score,
+              parts: tokens,
+              count: tokens.size
+            }
           end
         end
       end
 
-      best_result[:parts].each do |part|
-        full_name_arr << part
+      best[:parts].each do |part|
+        full_name_arr << part.capitalize
       end
 
       @full_name = full_name_arr.join(" ")
