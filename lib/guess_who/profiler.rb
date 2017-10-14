@@ -23,10 +23,12 @@ module GuessWho
       }
 
       strings.each do |str|
-        Tokenizer.tokenize!(str) do |tokens|
-          Scorer.score!(token) do |score|
-            Comparator.better?(score, best, tokens.count)
-            # best = Comparator.better?(score, best, tokens.count)
+        tokens = Tokenizer.tokenize!(str)
+        tokens.each { |x| puts x.inspect }
+
+        Scorer.score!(tokens) do |score|
+          Comparator.better?(score, best, tokens.count)
+            best = Comparator.better?(score, best, tokens.count)
           end
         end
       end
