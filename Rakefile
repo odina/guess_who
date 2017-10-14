@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "guess_who"
   gem.homepage = "http://github.com/odina/guess_who"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Extract name from email}
+  gem.description = %Q{Extracts name from username or email}
   gem.email = "odina.abellana@gmail.com"
   gem.authors = ["odina"]
   # dependencies defined in Gemfile
