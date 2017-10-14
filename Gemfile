@@ -3,7 +3,6 @@ source "https://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
-gem "fuzzy_match", "~> 2.1.0"
 gem "amatch", "~> 0.4.0"
 
 # Add dependencies to develop your gem here.
