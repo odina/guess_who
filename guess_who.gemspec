@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "files/initials.txt",
     "files/males.txt",
     "files/surnames.txt",
+    "guess_who.gemspec",
     "lib/guess_who.rb",
     "lib/guess_who/comparator.rb",
     "lib/guess_who/names_loader.rb",
