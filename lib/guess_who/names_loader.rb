@@ -31,6 +31,6 @@ module GuessWho
     end
 
     def self.names; @@names; end
-    def self.names_by_first_letter(letter); @@names_by_first_letter[letter] || []; end
+    def self.names_by_first_letter(letter); @@names_by_first_letter[letter.downcase] || []; end
   end
 end
