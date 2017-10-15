@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["odina".freeze]
-  s.date = "2017-10-14"
+  s.date = "2017-10-15"
   s.description = "Extracts name from username or email".freeze
   s.email = "odina.abellana@gmail.com".freeze
   s.extra_rdoc_files = [
