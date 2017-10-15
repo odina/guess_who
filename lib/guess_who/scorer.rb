@@ -20,9 +20,11 @@ module GuessWho
       score = 0
 
       @token_array.each do |token|
+        first_char = token[0][0]
+        names = NamesLoader.names_by_first_letter(first_char.downcase)
         m = Amatch::JaroWinkler.new(token)
 
-        score += NamesLoader.names.map do |name|
+        score += names.map do |name|
           m.match(name)
         end.max
       end
