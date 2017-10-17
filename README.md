@@ -6,7 +6,7 @@ Ruby implementation for guess-who nodejs package [https://github.com/fraction/gu
 
 ### Trying out:
 ```
-> profiler = GuessWho::Profiler.profile("john.doe@gmail.com")
+> profiler = GuessWho::Profiler.profile!("john.doe@gmail.com")
 > profiler.full_name # should say "John Doe"
 > profiler.email # should say "john.doe@gmail.com"
 ```
